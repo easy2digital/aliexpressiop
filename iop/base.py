@@ -21,12 +21,12 @@ import platform
 
 # dir = os.getenv('HOME')
 dir = expanduser("~")
-isExists = os.path.exists(dir + "/logs")
+isExists = os.path.exists(dir + "logs")
 if not isExists:
-    os.makedirs(dir + "/logs") 
+    os.makedirs(dir + "logs") 
 logger = logging.getLogger(__name__)
 logger.setLevel(level = logging.ERROR)
-handler = logging.FileHandler(dir + "/logs/iopsdk.log." + time.strftime("%Y-%m-%d", time.localtime()))
+handler = logging.FileHandler(dir + "logs/iopsdk.log." + time.strftime("%Y-%m-%d", time.localtime()))
 handler.setLevel(logging.ERROR)
 # formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 formatter = logging.Formatter('%(message)s')
